@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine’s Day</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+  <!-- Lock / question modal -->
+  <div class="lock-overlay" id="lockOverlay">
+    <div class="lock-dialog" id="lockDialog">
+      <div class="lock-inner">
+        <div class="lock-icon">
+          <span>💝</span>
+        </div>
+        <p class="lock-subtitle">
+          Who do I love the most?
+        </p>
+        <form id="lockForm" autocomplete="off">
+          <!-- Customize the question & password here -->
+          <div class="field-group">
+            <label for="lockAnswer"></label>
+            <input
+              id="lockAnswer"
+              name="lockAnswer"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              placeholder="Type your guess..."
+              required
+            />
+          </div>
+          <div id="lockError" class="error-msg"></div>
+          <button type="submit" class="btn-primary">
+            <span class="icon"></span>
+            <span>Unlock</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hearts animation layer -->
+  <div class="heart-layer" id="heartLayer" aria-hidden="true"></div>
+
+  <main>
+    <!-- Hero 1: Hi -->
+    <section id="hero" class="full-screen">
+      <div class="hero-inner fade-in">
+        <div class="hero-text-wrapper">
+          <div class="hero-text hero-text-1">Hi</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero 2: Happy Valentine's Day + magic button -->
+    <section id="heroHappy" class="full-screen">
+      <div class="hero-inner fade-in">
+        <div class="hero-text-wrapper">
+          <div class="hero-text hero-text-2">Happy Valentine’s Day</div>
+        </div>
+        <div class="hero-hearts-cta">
+          <button class="btn-ghost" id="heartBurstButton" type="button">
+            <span class="icon">💗</span>
+            <span>Press me</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Time together -->
+    <section id="time" class="full-screen">
+      <div class="card fade-in">
+        <p class="section-title-2">We've known each other for</p>
+        <div class="timer-grid" id="timerGrid">
+          <div class="timer-pill">
+            <div class="timer-value" id="timerYears">0</div>
+            <div class="timer-label">Years</div>
+          </div>
+          <div class="timer-pill">
+            <div class="timer-value" id="timerMonths">0</div>
+            <div class="timer-label">Months</div>
+          </div>
+          <div class="timer-pill">
+            <div class="timer-value" id="timerDays">0</div>
+            <div class="timer-label">Days</div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- Letter section -->
+    <section id="letterSection" class="full-screen">
+      <div class="card fade-in">
+        <p class="section-title">A little something for you</p>
+        <div class="letter-shell">
+          <div class="letter-preview" id="letterPreview">
+            I know you'll be reading this a lot so a 100 kisses for everytime you smile, okay?
+          </div>
+          <button class="btn-primary letter-button" type="button" id="openLetterBtn">
+            <span class="icon">✉️</span>
+            <span>Tap to open</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+ <!-- Memories -->
+<section id="memories" class="full-screen">
+  <div class="card fade-in">
+    <p class="section-title">Memoriesss</p>
+    <p class="section-subtitle">Some of my favorite pics of us</p>
+
+    <div class="memories-grid" id="memoriesGrid">
+
+      <div class="polaroid" data-image="Pictures/IMG_6370.jpg" data-caption="We look like a happily married couple here. I LOVE IT">
+        <img class="polaroid-thumb" src="Pictures/IMG_6370.jpg" alt="Memory 1" />
+        <div class="polaroid-caption">Uluwatu, Bali</div>
+      </div>
+
+      <div class="polaroid" data-image="Pictures/IMG_6371.jpg" data-caption="Cute mirror flick">
+        <img class="polaroid-thumb" src="Pictures/IMG_6371.jpg" alt="Memory 2" />
+        <div class="polaroid-caption">Long Walks in Nuanu</div>
+      </div>
+
+      <div class="polaroid" data-image="Pictures/IMG_6372.jpg" data-caption="Remember when everyone left the room and Jiun helped us sneakily take this pic.">
+        <img class="polaroid-thumb" src="Pictures/IMG_6372.jpg" alt="Memory 3" />
+        <div class="polaroid-caption">Your Birthday Night</div>
+      </div>
+
+      <div class="polaroid" data-image="Pictures/IMG_6373.jpg" data-caption="Bummed we couldn't really see the fireworks, but still one of my top favourite New Year's ever. 2026.">
+        <img class="polaroid-thumb" src="Pictures/IMG_6373.jpg" alt="Memory 4" />
+        <div class="polaroid-caption">New Years</div>
+      </div>
+
+      <div class="polaroid" data-image="Pictures/IMG_6374.jpg" data-caption="Remember when you were so shy to kiss me for the picture. HAHAHA">
+        <img class="polaroid-thumb" src="Pictures/IMG_6374.jpg" alt="Memory 5" />
+        <div class="polaroid-caption">My Graduation</div>
+      </div>
+
+      <div class="polaroid" data-image="Pictures/IMG_6375.jpg" data-caption="Final moments of being your neighbour">
+        <img class="polaroid-thumb" src="Pictures/IMG_6375.jpg" alt="Memory 6" />
+        <div class="polaroid-caption">Moving out from Changkat</div>
+      </div>
+
+      <div class="polaroid" data-image="Pictures/IMG_6376.jpg" data-caption="Hot Crush cos u are my hot crush. Get it? HAHAHAHA">
+        <img class="polaroid-thumb" src="Pictures/IMG_6376.jpg" alt="Memory 7" />
+        <div class="polaroid-caption">Hot Crush</div>
+      </div>
+
+      <div class="polaroid" data-image="Pictures/IMG_6377.jpg" data-caption="Crazy how far we've come ever since this day">
+        <img class="polaroid-thumb" src="Pictures/IMG_6377.jpg" alt="Memory 8" />
+        <div class="polaroid-caption">Bones</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      </div>
+    </section>
+
+    <!-- Final / audio -->
+    <section id="final" class="full-screen">
+      <div class="card fade-in">
+        <p class="section-title">Sooo...</p>
+        <div class="audio-shell">
+          <p class="final-question">Will you be my Valentine?</p>
+          <audio id="valentineAudio" src="Audio/valentine.m4a" preload="auto"></audio>
+          <div class="audio-card">
+            <div style="font-size: 12px; color: var(--text-muted);">
+            </div>
+            <div class="audio-row">
+              <button class="audio-play" id="audioPlay" type="button" aria-label="Play or pause voice message">
+                ▶
+              </button>
+              <div class="audio-meta">
+                <div class="audio-bar">
+                  <div class="audio-bar-progress" id="audioProgress"></div>
+                </div>
+                <div class="audio-time">
+                  <span id="audioCurrent">0:00</span>
+                  <span id="audioDuration">0:06</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-yes" id="yesButton" type="button">
+            YES
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      For Marie, From Joe Yue <br> <b>14/02/2026</b>
+    </div>
+  </main>
+
+  <!-- Hidden audio element -->
+  <audio id="voiceMessage" preload="metadata">
+    <!-- Replace with your own audio file path -->
+    <source src="voice-message.mp3" type="audio/mpeg" />
+  </audio>
+
+ <!-- Letter modal -->
+<div class="modal-backdrop" id="letterModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+    <div class="modal-header">
+      <div class="modal-title" id="letterTitle">A little letter for you</div>
+      <button class="modal-close" type="button" data-close-modal="letterModal" aria-label="Close letter">
+        ✕
+      </button>
+    </div>
+    <div class="modal-body" style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
+      <p>
+        We've come such a long way ever since we first met. It is actually crazy how none of us thought fate would lead us here. Being your best friend was already a peak moment in my life, but loving you and being loved by you made it go from a 100 to a 1000.
+      </p>
+      <p>
+        There's just sooo many things about you that I love and will keep loving, but I can't tell you all of it because the world will probably end before I'm done listing them out.
+      </p>
+      <p>
+        There's never a day where I regret meeting you or wished a life without you in it, and I am so grateful that I never have to imagine that. Thank you for being there through everything.
+      </p>
+      <p>
+        I wish you could see how beautiful you are from my eyes and fall a thousand times. May you be my forever valentine.
+      </p>
+      <p style="text-align: center; font-weight: bold; margin-top: 20px;">
+        Happy Valentines Day, Marie
+      </p>
+    </div>
+  </div>
+</div>
+
+  <!-- Memory modal -->
+  <div class="modal-backdrop" id="memoryModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="memoryTitle">
+      <div class="modal-header">
+        <div class="modal-title" id="memoryTitle"></div>
+        <button class="modal-close" type="button" data-close-modal="memoryModal" aria-label="Close memory">
+          ✕
+        </button>
+      </div>
+      <div class="modal-body">
+        <img id="memoryImg" class="memory-img-large" src="" alt="Memory" />
+        <div id="memoryCaption" class="memory-caption"></div>
+      </div>
+    </div>
+  </div>
+  <!-- GSAP + ScrollTrigger (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-NWpWZkRykGGBqBPdZiZsaAJ+lZeXqI1SYG2ulLhqy5rWbHV+hv6GukdxlBhy/F3r9dRnG8qvwa77f8W7AjKk5g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-iQmPZ/H2cGud0loMJPfrBxZKKfAP07ZhXLnuSUXGMWzME2YioH5E8pDbqtmxozXzE5jEBAuUIWD5HDGbdD4iPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
+</body>
+</html>
